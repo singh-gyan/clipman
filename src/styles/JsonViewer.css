@@ -1,0 +1,199 @@
+.json-viewer-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: var(--border-radius-lg);
+  padding: 1rem;
+}
+
+.json-viewer-panel.disabled {
+  opacity: 0.6;
+  background: var(--secondary-color);
+}
+
+.json-viewer-panel h3 {
+  margin: 0 0 0.75rem 0;
+  color: #495057;
+  font-size: 1rem;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 0.5rem;
+}
+
+.json-validation-result {
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: var(--border-radius);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.3;
+  overflow-x: auto;
+}
+
+.json-validation-result.valid {
+  background-color: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  color: #2e7d32;
+}
+
+.json-validation-result.invalid {
+  background-color: #ffebee;
+  border: 1px solid #ef9a9a;
+  color: #c62828;
+}
+
+.json-search-container {
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+.json-search-input {
+  width: 100%;
+  padding: 0.5rem 2rem 0.5rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  background: white;
+  transition: var(--transition);
+}
+
+.json-search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.clear-search-btn {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.clear-search-btn:hover {
+  background-color: #f0f0f0;
+  color: var(--text-primary);
+}
+
+.json-tree-container {
+  flex: 1;
+  overflow-y: auto;
+  background: #1e1e1e;
+  border-radius: var(--border-radius-lg);
+  padding: 1rem;
+  border: 1px solid #333;
+  
+  /* Custom styling for svelte-tree-view using base16 theme */
+  --tree-view-base00: #1e1e1e;  /* Default Background */
+  --tree-view-base01: #383838;  /* Lighter Background */
+  --tree-view-base02: #404040;  /* Selection Background */
+  --tree-view-base03: #808080;  /* Comments, Invisibles */
+  --tree-view-base04: #b4b7b4;  /* Dark Foreground */
+  --tree-view-base05: #d4d4d4;  /* Default Foreground */
+  --tree-view-base06: #e0e0e0;  /* Light Foreground */
+  --tree-view-base07: #ffffff;  /* Light Background */
+  --tree-view-base08: #ff6b6b;  /* Variables, Tags */
+  --tree-view-base09: #ffaa44;  /* Integers, Boolean */
+  --tree-view-base0A: #ffd700;  /* Classes, Search */
+  --tree-view-base0B: #ce9178;  /* Strings, Code */
+  --tree-view-base0C: #4ec9b0;  /* Support, Regex */
+  --tree-view-base0D: #9cdcfe;  /* Functions, Methods */
+  --tree-view-base0E: #569cd6;  /* Keywords, Storage */
+  --tree-view-base0F: #d19a66;  /* Deprecated */
+  
+  color: #d4d4d4;
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+.json-formatted-text {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  background: #1e1e1e;
+  color: #d4d4d4;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  overflow-x: auto;
+  white-space: pre;
+  font-family: var(--font-mono);
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.json-error-details {
+  background: #2d1b1b;
+  border: 1px solid #8b3a3a;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-top: 0.5rem;
+}
+
+.json-error-details p {
+  margin: 0 0 0.5rem 0;
+  color: #ff6b6b;
+}
+
+.json-error-details p:last-child {
+  margin-bottom: 0;
+}
+
+.error-location {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: #ffaa44 !important;
+  background: rgba(255, 170, 68, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.no-search-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: #888;
+  text-align: center;
+  gap: 1rem;
+}
+
+.no-search-results p {
+  margin: 0;
+  font-style: italic;
+}
+
+.json-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #6c757d;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .json-viewer-panel {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .json-viewer-panel {
+    max-height: 250px;
+  }
+} 

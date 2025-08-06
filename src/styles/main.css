@@ -1,0 +1,21 @@
+.container {
+  padding: 1rem;
+  font-family: var(--font-sans);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-layout {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+  min-height: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app-layout {
+    flex-direction: column;
+  }
+} 

@@ -1,0 +1,95 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hamburger-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--secondary-color);
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 0;
+}
+
+.hamburger-button:hover {
+  background: #e8f4fd;
+  border-color: var(--primary-color);
+}
+
+.hamburger-button:focus {
+  outline: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 18px;
+  height: 14px;
+}
+
+.hamburger-icon span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--text-primary);
+  border-radius: 1px;
+  margin: 2px 0;
+  transition: all 0.3s ease;
+}
+
+.header-title {
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.debug-button {
+  background: var(--warning-color);
+  color: white;
+}
+
+.debug-button:hover {
+  background: var(--warning-hover);
+}
+
+.clear-all-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hamburger-button {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .header-left {
+    gap: 0.75rem;
+  }
+  
+  .header-title {
+    font-size: 1.3rem;
+  }
+} 
